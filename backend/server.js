@@ -27,20 +27,6 @@ var corsOption = {
     exposedHeaders: ['x-auth-token']
 };
  app.use(cors(corsOption));
-// //routes
-// var passport = require('passport');
-// var GoogleTokenStrategy = require('passport-google-oauth20').Strategy;
-// passport.use(new GoogleTokenStrategy({
-//     clientID: "1007733840792-7r03bcpgdk4inv0d2hi4emmicb8cd7df.apps.googleusercontent.com",
-//     clientSecret: "ccpuhFzTd5aJb1KfCQkx8TVK",
-//     callbackURL: "/go",
-//     passReqToCallback: true
-// },
-// function(req, accessToken, refreshToken, profile, done) {
-//     // 
-//     console.log(profile)
-//     done()
-// }));
 
 app.post('/auth/google', async (req,res,next)=>{
     console.log(req.body.access_token)
